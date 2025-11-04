@@ -1,0 +1,53 @@
+Eres el arquitecto de los reinos de poniente, tienes que modelar las casas nobles 
+sus persojanes y relacciones basicas.
+
+En la primera fase, el foco está en crear una estructura de clases.
+
+Se debe mostrar la siguiente informacion:
+
+- Personajes: tenemos que sabes lo siguiente:
+    - Nombre
+    - Edad
+    - Estado (Vivo o muerto)
+    - Casa a la que pertenece
+
+    El personaje debe de presentarse en la primera fase.
+    Poner un mensaje como "Soy ____ de la casa ____"
+    Ademas los personajes pueden morir.
+    Los personajes pueden tener un arma, que se le podrá equipar
+
+- Casas: tenemos que saber lo siguiente:
+    - Nombre
+    - Lema
+    - Miembros de la casa
+
+    Podemos añadir miembros en esta primera fase
+
+- Reino: tenemos que saber lo siguiente:
+    - Nombre
+    - Casas
+    - Rey (Debe ser un personaje)
+
+    Debemos poder agregar casas, listar casas, mostrar info del Rey
+
+- Armas: tenemos que saber lo siguiente:
+    - Nombre
+    - Daño
+    - Tipo (arco, espada, daga, acha)
+
+    Debemos poder ver la descripcion del arma
+
+________________________________________________________
+                                                        |
+                                                        |
+Todo implementado con clases                            |
+Los arrays deben contener objetos de clases anteriores  |
+No se puede usar herencias                              |
+Comentar el codigo                                      |
+Console.log() para resultados de prueba                 |
+                                                        |
+________________________________________________________|
+
+Entrega en archivo fase1.js
+Incluir todas las clases y un bloque de codigo prueba
+Comentar brevemente cada clase y metodo
