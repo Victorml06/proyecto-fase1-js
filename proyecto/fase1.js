@@ -1,57 +1,88 @@
-import { Arma } from "./clases/Arma.js";
 import { Casa } from "./clases/Casa.js";
 import { Personaje } from "./clases/Personaje.js";
+import { Arma } from "./clases/Arma.js";
 import { Reino } from "./clases/Reino.js";
 
-const garra = new Arma("Garra", 25, "espada");
-const aguja = new Arma("Aguja", 15, "espada");
+const Reino1=new Reino();
+const CasaStark=new Casa();
+const CasaLannister=new Casa();
 
-// Crear casas
-const casaStark = new Casa("Stark", "Se acerca el invierno");
-const casaLannister = new Casa("Lannister", "Oye mi rugido");
+const Garra=new Arma();
+const Aguja=new Arma();
 
-// Crear personajes
-const jon = new Personaje("Jon Snow", 25, casaStark);
-const arya = new Personaje("Arya Stark", 18, casaStark);
-const jaime = new Personaje("Jaime Lannister", 35, casaLannister);
+const JonSnow=new Personaje();
+const AryaStark=new Personaje();
+const JaimeLannister=new Personaje();
 
-// Crear reino
-const poniente = new Reino("Poniente");
 
-// Añadir casas al reino
-poniente.agregarCasa(casaStark);
-poniente.agregarCasa(casaLannister);
+Reino1.meterReino="Poniente";
 
-// Equipar armas
-jon.equiparArma(garra);
-arya.equiparArma(aguja);
+CasaStark.meterNombreCasa="Casa Stark";
+CasaLannister.meterNombreCasa="Casa Lannister";
 
-// Añadir personajes a sus casas
-casaStark.agregarMiembro(jon);
-casaStark.agregarMiembro(arya);
-casaLannister.agregarMiembro(jaime);
 
-// Proclamar rey
-poniente.proclamarRey(jaime);
+Garra.meterNombreArma="Garra";
+Garra.meterTipo="espada";
+Garra.meterdanio=25;
 
-// Listar casas
-poniente.listarCasas();
+Aguja.meterNombreArma ="Aguja";
+Aguja.meterTipo="espada"; 
+Aguja.meterdanio=15;
 
-// Mostrar rey actual
-poniente.mostrarRey();
 
-// Mostrar miembros de las casas
-casaStark.mostrarMiembros();
-casaLannister.mostrarMiembros();
+JonSnow.meterNombrePersonaje="Jon Snow";
+AryaStark.meterNombrePersonaje="Arya Stark";
+JaimeLannister.meterNombrePersonaje="Jaime Lannister";
 
-// Presentaciones
+JonSnow.meterEdad = 24;
+AryaStark.meterEdad = 18;
+JaimeLannister.meterEdad = 42;
+
+
+Reino1.meterCasa(CasaStark);
+Reino1.meterCasa(CasaLannister);
+
+JonSnow.meterArma(Garra);
+console.log("Jon Snow ha equipado el arma "+Garra.getNombreArma());
+
+AryaStark.meterArma(Aguja);
+console.log("Arya Stark ha equipado el arma "+Aguja.getNombreArma());
+
+
+JonSnow.meterCasa(CasaStark);
+CasaStark.meterMiembro(JonSnow); 
+console.log("Jon Snow ha sido añadido a la Casa Stark");
+
+AryaStark.meterCasa(CasaStark);
+CasaStark.meterMiembro(AryaStark);
+console.log("Arya Stark ha sido añadido a la Casa Stark");
+
+JaimeLannister.meterCasa(CasaLannister);
+CasaLannister.meterMiembro(JaimeLannister);
+console.log("Jaime Lannister ha sido añadido a la Casa Lannister");
+
+
+Reino1.proclamarRey(JaimeLannister);
+
+
+//Casas reino poniente
+Reino1.visualizarCasas();
+
+
+//Rey actual
+Reino1.mostrarReyActual();
+
+
+console.log("Miembros de la Casa Stark:");
+CasaStark.visualizarMiembro();
+
+
 console.log("Presentaciones:");
-jon.presentarse();
-arya.presentarse();
-jaime.presentarse();
-console.log();
+JonSnow.presentarse();
+AryaStark.presentarse();
+JaimeLannister.presentarse();
 
-// Mostrar armas
+
 console.log("Armas:");
-console.log(garra.descripcion());
-console.log(aguja.descripcion());
+Garra.monstrarCaracteristicas();
+Aguja.monstrarCaracteristicas();
